@@ -1,0 +1,41 @@
+body
+{
+    background-image: url(./images/screenshot_PV.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 10%;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+#mainContainer
+{
+    width: 100%;
+}
+#titleContainer
+{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+}
+#mainTitle
+{
+    font-size: x-large;
+    font-weight: 700;
+    text-align: center;
+}
+#listsContainer
+{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.list
+{
+    background-color: gainsboro;
+    width: 18%;
+    border-radius: 2px;
+}
+#buttonCreateList
+{
+    background-color: gainsboro;
+    width: 18%;
+    border-radius: 2px;
+}

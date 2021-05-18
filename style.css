@@ -2,10 +2,12 @@ body
 {
     background-image: url(./images/screenshot_PV.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center 10%;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(54, 54, 61);
 }
 #mainContainer
 {
@@ -29,12 +31,39 @@ body
 }
 .list
 {
+    display: inline-block;
+    vertical-align: top;
     background-color: gainsboro;
     width: 18%;
     border-radius: 2px;
+    padding: 5px;
+}
+.list ul
+{
+    max-height: 550px;
+    overflow-y: scroll;
+    padding: 5px;
+}
+.list ul li
+{
+    list-style-type: none;
+    background-color: whitesmoke;
+    margin: 10px 0px 10px 0px;
+    padding: 7px;
+    border-radius: 3px;
+    box-shadow: 0px 1px rgb(109, 109, 109);
+}
+.listName
+{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 10px;
 }
 #buttonCreateList
 {
+    display: inline-block;
+    text-align: left;
+    font-weight: lighter;
     background-color: gainsboro;
     width: 18%;
     border-radius: 2px;

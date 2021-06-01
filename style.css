@@ -94,6 +94,7 @@ background: rgba(100, 100, 100, 0.6);
     background-color: whitesmoke;
     margin: 10px 0px 10px 0px;
     padding: 7px;
+    white-space: normal;
     border-radius: 3px;
     box-shadow: 0px 1px rgb(109, 109, 109);
 }
@@ -113,3 +114,18 @@ background: rgba(100, 100, 100, 0.6);
     width: 18%;
     border-radius: 2px;
 }
+#buttonCreateListActive > :first-child > :first-child
+{
+    background-color: red;
+    width: calc(100% - 25px);
+    padding: 5px 10px;
+}
+/* #buttonCreateListActive form input:focus
+{
+    display: unset;
+    color: red;
+}
+#buttonCreateListActive:focus-within #buttonCreateList
+{
+    color: red;
+} */

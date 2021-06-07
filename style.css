@@ -1,3 +1,7 @@
+:root
+{
+    --themeColor: rgb(50, 80, 160);
+}
 body
 {
     background-image: url(./images/screenshot_PV.jpg);
@@ -19,6 +23,7 @@ body
 {
     background-color: rgba(255, 255, 255, 0.5);
     position: fixed;
+    color: var(--themeColor);
     top: 0;
     width: 100%;
     padding: 5px;
@@ -31,12 +36,9 @@ body
 }
 #listsContainer
 {
-    margin-top: 10px;
     margin-left: 10px;
     margin-top: 50px;
     padding-bottom: 30px;
-
-
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -87,6 +89,7 @@ background: rgba(100, 100, 100, 0.6);
     max-height: 500px;
     overflow-y: auto;
     padding: 5px;
+    padding-top: 0px;
 }
 .list ul li
 {
@@ -98,14 +101,21 @@ background: rgba(100, 100, 100, 0.6);
     border-radius: 3px;
     box-shadow: 0px 1px rgb(109, 109, 109);
 }
+.list > ul > :first-child
+{
+    margin-top: 0px;
+}
 .listName
 {
     font-size: 18px;
     font-weight: bold;
     padding: 8px 10px;
 }
+
 #buttonCreateList
 {
+    font-size: 18px;
+    font-weight: unset;
     display: inline-block;
     text-align: left;
     font-weight: lighter;
@@ -114,18 +124,27 @@ background: rgba(100, 100, 100, 0.6);
     width: 18%;
     border-radius: 2px;
 }
+#buttonCreateListActive
+{
+    display: none;
+}
 #buttonCreateListActive > :first-child > :first-child
 {
-    background-color: red;
-    width: calc(100% - 25px);
-    padding: 5px 10px;
+    font-size: 15px;
+    border: none;
+    width: calc(100% - 30px);
+    padding: 10px 15px;
 }
-/* #buttonCreateListActive form input:focus
+#buttonCreateListActive > :first-child > :last-child > *
+{
+    font-size: 15px;
+    border: none;
+    width: calc(50% - 2.5px);
+    margin-top: 5px;
+    padding: 7px 15px;
+}
+#buttonCreateListActive > :first-child > :first-child:focus-visible
 {
     display: unset;
-    color: red;
+    outline-color: var(--themeColor);
 }
-#buttonCreateListActive:focus-within #buttonCreateList
-{
-    color: red;
-} */

@@ -36,7 +36,7 @@
                         <li>3</li>
                     </ul>
                     <div>
-                        <button>+ Voeg een kaart toe</button>
+                        <button>+ Een kaart toevoegen</button>
                     </div>
                 </div>
                 
@@ -51,7 +51,7 @@
                         <li>3</li>
                     </ul>
                     <div>
-                        <button>+ Voeg een kaart toe</button>
+                        <button>+ Een kaart toevoegen</button>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@
                         <li>3</li>
                     </ul>
                     <div>
-                        <button>+ Voeg een kaart toe</button>
+                        <button>+ Een kaart toevoegen</button>
                     </div>
                 </div>
                            

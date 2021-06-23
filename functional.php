@@ -1,22 +1,26 @@
 <?php
-$servername = "localhost";
-$database = "back-end-checklist";
-$username = "root";
-$password = "";
+include 'connection.php';
 
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-  // set the PDO error mode to exception
- 
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
+
+/* $test = $conn->prepare("CREATE TABLE `LISTtest` ( `id` INT NOT NULL AUTO_INCREMENT , `name` TEXT NOT NULL , `description` TEXT NOT NULL , `duration` INT NOT NULL , `labels` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;");
+ */
+/*  $test = $conn->prepare("INSERT INTO listtest (name) VALUES ('testname')");
+$test->execute(); */
+
+/* $createNewList = $conn->prepare("CREATE TABLE lists ( `id` INT NOT NULL AUTO_INCREMENT , `name` TEXT NOT NULL , `position` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;");
+$createNewList->execute(); */
+
+/* $createNewList = $conn->prepare("INSERT INTO cards (name) VALUES ('testCARD')");
+$createNewList->execute();
+ */
+
+function createListItem($list, $itemName)
+{
+  $createNewItem = $conn->prepare("INSERT INTO cards (name, fromList) VALUES ($itemName,$list)");
+  $createNewItem->execute();
 }
 
-
-$test = $conn->prepare("CREATE TABLE `LISTNAME` ( `id` INT NOT NULL AUTO_INCREMENT , `name` TEXT NOT NULL , `description` TEXT NOT NULL , `duration` INT NOT NULL , `labels` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;");
-$test->execute();
-
 include 'Main.php';
+
 ?>
 

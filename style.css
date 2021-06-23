@@ -129,27 +129,32 @@ body
     font-weight: lighter;
     background-color: rgba(220, 220, 220, 0.5);
     border: none;
+    cursor: pointer;
 }
 #buttonCreateListActive
 {
     display: none;
 }
-#buttonCreateListActive > :first-child > :first-child /* new list input */
+#buttonCreateListActive > :first-child /* new list input */
 {
     font-size: 15px;
     border: none;
+    border-radius: 2px;
     width: calc(100% - 30px);
     padding: 10px 15px;
 }
-#buttonCreateListActive > :first-child > :last-child > * /* new list buttons */
+#buttonCreateListActive > :last-child > * /* new list buttons */
 {
     font-size: 15px;
     border: none;
+    border-radius: 2px;
     width: calc(50% - 2.5px);
     margin-top: 5px;
     padding: 7px 15px;
+    background-color: whitesmoke;
+    cursor: pointer;
 }
-#buttonCreateListActive > :first-child > :first-child:focus-visible /* new list input */
+#buttonCreateListActive > :first-child:focus-visible /* new list input */
 {
     display: unset;
     outline-color: var(--themeColor);

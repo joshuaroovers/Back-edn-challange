@@ -12,77 +12,38 @@
                 <div id="mainTitle">Front-end-challenge</div>
             </div>
             <div id="listsContainer">
+<?php
+ include 'writeLists.php'
+?>
 
                 <div class="list">
                     <div>
                         <div class="listName">name</div>
+                        <!-- <form>
+                            <input type="text" value="name">
+                        </form> -->
                         <div></div>
                     </div>
                     <ul>
                         <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul>
-                    <div>
-                        <button>+ Een kaart toevoegen</button>
-                    </div>
-                </div>
-                
-                <div class="list">
-                    <div>
-                        <div class="listName">name</div>
-                        <div></div>
-                    </div>
-                    <ul>
-                        <li>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50</li>
-                        <li>2</li>
-                        <li>3</li>
                     </ul>
                     <div>
                         <button>+ Een kaart toevoegen</button>
                     </div>
                 </div>
 
-                <div class="list">
-                    <div>
-                        <div class="listName">name</div>
-                        <div></div>
-                    </div>
-                    <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul>
-                    <div>
-                        <button>+ Een kaart toevoegen</button>
-                    </div>
-                </div>
                            
                 <button id="buttonCreateList" class="list">
                     <div class="listName">+ Voeg een lijst toe</div>
                 </button>
 
-                <div id="buttonCreateListActive" class="list">
-                    <form>
-                        <input type="text" placeholder="Geef deze lijst een naam...">
-                        <div>
-                            <input type="submit" value="Lijst toevoegen">
-                            <button>X</button>
-                        </div>
-                    </form>
-                </div>
+                <form id="buttonCreateListActive" class="list">
+                    <input type="text" placeholder="Geef deze lijst een naam...">
+                    <div>
+                        <input type="submit" value="Lijst toevoegen">
+                        <button>X</button>
+                    </div>
+                </form>
 
             </div>
         </div>

@@ -39,6 +39,7 @@ body
     margin-left: 10px;
     margin-top: 50px;
     padding-bottom: 30px;
+    height: 620px;
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -121,6 +122,22 @@ body
 {
     font-weight: bold;
     padding: 8px 10px;
+    margin-bottom: 5px;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.listNameEdit
+{
+    width: calc(100% - 20px);
+    border: none;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: inherit;
+}
+.listNameEdit:focus-visible
+{
+    outline-color: var(--themeColor);
 }
 
 #buttonCreateList
@@ -156,6 +173,9 @@ body
 }
 #buttonCreateListActive > :first-child:focus-visible /* new list input */
 {
-    display: unset;
     outline-color: var(--themeColor);
+}
+.hidden
+{
+    display: none;
 }

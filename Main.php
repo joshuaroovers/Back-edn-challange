@@ -12,16 +12,18 @@
                 <div id="mainTitle">Front-end-challenge</div>
             </div>
             <div id="listsContainer">
-<?php
- include 'writeLists.php'
-?>
+                <?php
+                include 'writeLists.php'
+                ?>
 
                 <div class="list">
                     <div>
-                        <div class="listName">name</div>
-                        <!-- <form>
-                            <input type="text" value="name">
-                        </form> -->
+                        <div class="editListName" onclick="listName(5)">
+                            <div class="listName">*name</div>
+                            <form class="hidden" action="test.php" method="post" >
+                                <input class="listName listNameEdit" type="text">
+                            </form>
+                        </div>
                         <div></div>
                     </div>
                     <ul>
@@ -37,11 +39,11 @@
                     <div class="listName">+ Voeg een lijst toe</div>
                 </button>
 
-                <form id="buttonCreateListActive" class="list">
-                    <input type="text" placeholder="Geef deze lijst een naam...">
+                <form id="buttonCreateListActive" class="list" action="createList.php" method="post">
+                    <input type="text" value="" name="listname" placeholder="Geef deze lijst een naam..." required oninvalid="setCustomValidity(' ')">
                     <div>
                         <input type="submit" value="Lijst toevoegen">
-                        <button>X</button>
+                        <button type="button">X</button>
                     </div>
                 </form>
 

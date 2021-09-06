@@ -14,15 +14,26 @@ document.getElementById("buttonCreateListActive").lastElementChild.lastElementCh
 
 function listName(pos)
 {
-    con = document.getElementsByClassName("editListName")[pos];
+    el = document.getElementsByClassName("listName")[pos];
 
-    Lname = con.firstElementChild.innerHTML
-    console.log(Lname)
-    console.log(con.lastElementChild.innerHTML)/*
-    con.lastElementChild.value = Lname;
-    console.log(con.lastElementChild.value) */
-    con.firstElementChild.classList.toggle("hidden");
-    con.lastElementChild.classList.toggle("hidden");
-    con.lastElementChild.firstElementChild.select();
+    /* Lname = el.innerHTML
+    el.lastElementChild.value = Lname; */
+
+    el.classList.toggle("hidden");
+    el.parentElement.lastElementChild.classList.toggle("hidden");
+    el.parentElement.lastElementChild.firstElementChild.select();
 }
+LNameArray = document.getElementsByClassName("listNameEdit");
+console.log(LNameArray);
+LNameArray.forEach(LName => {
+    LName.addEventListener("blur", function(){
+
+        LName.parentElement.classList.toggle("hidden");
+        LName.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
+
+    });
+});
+/* LNameArray.forEach((LName) => {
+    
+}); */
 

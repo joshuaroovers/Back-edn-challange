@@ -18,9 +18,9 @@
 
                 <div class="list">
                     <div>
-                        <div class="editListName" onclick="listName(5)">
-                            <div class="listName">*name</div>
-                            <form class="hidden" action="test.php" method="post" >
+                        <div>
+                            <div class="listName" onclick="listName(7)">*name</div>
+                            <form class="hidden" action="updateListName.php" method="post" >
                                 <input class="listName listNameEdit" type="text">
                             </form>
                         </div>

@@ -18,9 +18,9 @@ foreach ($allLists as $list) {
     echo("
     <div class=\"list\">
         <div>
-            <div class=\"editListName\" onclick=\"listName($pos)\">
-                <div class=\"listName\">$name</div>
-                <form class=\"hidden\" action=\"test.php\" method=\"post\">
+            <div>
+                <div class=\"listName\" onclick=\"listName($pos)\">$name</div>
+                <form class=\"hidden\" action=\"updateListName.php\" method=\"post\">
                     <input class=\"listName listNameEdit\" type=\"text\" value=\"$name\" name=\"name\">
                     <input type=\"hidden\" value=\"$id\" name=\"id\">
                 </form>

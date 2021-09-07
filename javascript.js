@@ -16,24 +16,20 @@ function listName(pos)
 {
     el = document.getElementsByClassName("listName")[pos];
 
-    /* Lname = el.innerHTML
-    el.lastElementChild.value = Lname; */
-
     el.classList.toggle("hidden");
     el.parentElement.lastElementChild.classList.toggle("hidden");
     el.parentElement.lastElementChild.firstElementChild.select();
 }
-LNameArray = document.getElementsByClassName("listNameEdit");
-console.log(LNameArray);
-LNameArray.forEach(LName => {
-    LName.addEventListener("blur", function(){
 
-        LName.parentElement.classList.toggle("hidden");
-        LName.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
+
+for(x = 0; x < document.getElementsByClassName("listNameEdit").length; x++)
+{
+
+    document.getElementsByClassName("listNameEdit")[x].addEventListener("blur", function(){
+        this.parentElement.classList.toggle("hidden");
+        this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
 
     });
-});
-/* LNameArray.forEach((LName) => {
-    
-}); */
+}
+
 

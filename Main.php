@@ -21,7 +21,8 @@
                         <div>
                             <div class="listName" onclick="listName(7)">*name</div>
                             <form class="hidden" action="updateListName.php" method="post" >
-                                <input class="listName listNameEdit" type="text">
+                                <input class="listNameEdit" type="text" value="*name">
+                                <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
                             </form>
                         </div>
                         <div></div>

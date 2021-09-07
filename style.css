@@ -118,7 +118,7 @@ body
     margin-top: 5px;
     padding: 7px 15px;
 }
-.listName
+.listName, .listNameEdit
 {
     font-weight: bold;
     padding: 8px 10px;

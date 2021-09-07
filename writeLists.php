@@ -40,6 +40,10 @@ foreach ($allLists as $list) {
         </ul>
         <div>
             <button>+ Een kaart toevoegen</button>
+            <form>
+                <input type=\"text\" name=\"name\">
+                <input type=\"hidden\" name=\"fromList\">
+            </form>
         </div>
     </div>
     ");

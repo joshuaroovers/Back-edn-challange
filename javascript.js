@@ -12,6 +12,7 @@ document.getElementById("buttonCreateListActive").lastElementChild.lastElementCh
     document.getElementById("buttonCreateList").style.display = 'inline-block';
 }
 
+
 function listName(pos)
 {
     el = document.getElementsByClassName("listName")[pos];
@@ -21,15 +22,15 @@ function listName(pos)
     el.parentElement.lastElementChild.firstElementChild.select();
 }
 
-
 for(x = 0; x < document.getElementsByClassName("listNameEdit").length; x++)
 {
-
     document.getElementsByClassName("listNameEdit")[x].addEventListener("blur", function(){
         this.parentElement.classList.toggle("hidden");
         this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
-
     });
 }
+
+document.getElementsByClassName("buttonCreateCard")/* onclick enable form */
+document.getElementsByClassName("cardCreateEdit")/* blur */
 
 

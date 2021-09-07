@@ -31,7 +31,15 @@
                         <li>1</li>
                     </ul>
                     <div>
-                        <button>+ Een kaart toevoegen</button>
+                        <button class="buttonCreateCard">+ Een kaart toevoegen</button>
+                        <form>
+                            <input class="createCardEdit" type="text" name="name">
+                            <input type="hidden" name="fromList">
+                            <div>
+                                <input type="submit" value="Kaart toevoegen">
+                                <button class="ButtonCancel"><i class="fas fa-times"></i></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -44,7 +52,7 @@
                     <input type="text" value="" name="listname" placeholder="Geef deze lijst een naam..." required oninvalid="setCustomValidity(' ')">
                     <div>
                         <input type="submit" value="Lijst toevoegen">
-                        <button type="button">X</button>
+                        <button class="buttonCancel"><i class="fas fa-times"></i></button>
                     </div>
                 </form>
 

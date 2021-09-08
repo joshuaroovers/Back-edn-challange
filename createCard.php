@@ -19,7 +19,6 @@ else
   $newPos = $allCardsInList[0][6] + 1;
 }
 
-
 $createNewCard = $conn->prepare("INSERT INTO cards (name, fromList , position) VALUES ('$newCardName',$newCardFrom, $newPos)");
 $createNewCard->execute();
 

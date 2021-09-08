@@ -8,7 +8,7 @@ $getLists = $conn->prepare("SELECT * FROM lists ORDER BY id DESC");
 $getLists->execute();
 $allLists = $getLists->fetchAll();
 
-if($allLists[0][2] = null)
+if($allLists == null)
 {
   $newPos = 0;
 }

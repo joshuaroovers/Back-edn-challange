@@ -11,14 +11,13 @@ body
     background-attachment: fixed;
     overflow-y: hidden;
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
     color: rgb(54, 54, 61);
 }
 .hidden
 {
     display: none;
 }
-
 
 #mainContainer
 {
@@ -72,7 +71,7 @@ body
     display: inline-block;
     vertical-align: top;
     background-color: gainsboro;
-    font-size: 18px;
+    font-size: 18px !important;
     width: 275px;
     border-radius: 2px;
     margin: 0px 4px 0px 4px;
@@ -101,10 +100,11 @@ body
     padding: 0px 5px 0px 5px;
     margin: 0px;
 }
-.list ul li /* cards */
+.list ul li, .newCardInput /* cards */
 {
     list-style-type: none;
-    background-color: whitesmoke;
+    background-color: whitesmoke !important;
+    font-family: inherit;
     margin: 10px 0px 10px 0px;
     padding: 7px;
     white-space: normal;
@@ -128,8 +128,9 @@ div.list > div:last-child /* add new card container */
     text-align: left;
     border: none;
     background-color: transparent;
-    margin-top: 5px;
-    padding: 7px 15px;
+    margin: 0px;
+    width: calc(100% - 14px);
+    padding: 7px;
 }
 
 
@@ -154,14 +155,15 @@ div.list > div:last-child /* add new card container */
     outline-color: var(--themeColor);
 }
 
-#listsContainer .list .ButtonCancel
+
+#listsContainer .list .buttonCancel
 {
     vertical-align: bottom;
     padding: 3.5px 5px;
     width: fit-content;
     background-color: transparent;
 }
-#listsContainer .list .ButtonCancel > :first-child
+#listsContainer .list .buttonCancel > :first-child
 {
     font-size: 25px;
     text-align: center;

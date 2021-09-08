@@ -9,7 +9,7 @@
     <body>
         <div id="mainContainer">
             <div id="titleContainer">
-                <div id="mainTitle">Front-end-challenge</div>
+                <div id="mainTitle">Back-end-challenge</div>
             </div>
             <div id="listsContainer">
                 <?php
@@ -19,7 +19,7 @@
                 <div class="list">
                     <div>
                         <div>
-                            <div class="listName" onclick="listName(7)">*name</div>
+                            <div class="listName" >*name</div>
                             <form class="hidden" action="updateListName.php" method="post" >
                                 <input class="listNameEdit" type="text" value="*name">
                                 <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
@@ -32,23 +32,23 @@
                     </ul>
                     <div>
                         <button class="buttonCreateCard">+ Een kaart toevoegen</button>
-                        <form>
-                            <input class="createCardEdit" type="text" name="name">
-                            <input type="hidden" name="fromList">
+                        <form class="hidden">
+                            <input class="createCardEdit newCardInput" type="text" name="name" placeholder="Geef deze kaart een naam..." required oninvalid="setCustomValidity(' ')">
+                            <!-- <input type="hidden" name="fromList"> -->
                             <div>
                                 <input type="submit" value="Kaart toevoegen">
-                                <button class="ButtonCancel"><i class="fas fa-times"></i></button>
+                                <button class="buttonCancel"><i class="fas fa-times b"></i></button>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                           
+                
                 <button id="buttonCreateList" class="list">
                     <div class="listName">+ Voeg een lijst toe</div>
                 </button>
 
-                <form id="buttonCreateListActive" class="list" action="createList.php" method="post">
+                <form id="buttonCreateListActive" class="list hidden" action="createList.php" method="post">
                     <input type="text" value="" name="listname" placeholder="Geef deze lijst een naam..." required oninvalid="setCustomValidity(' ')">
                     <div>
                         <input type="submit" value="Lijst toevoegen">

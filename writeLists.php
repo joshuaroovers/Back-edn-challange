@@ -1,11 +1,11 @@
 <?php
 include 'connection.php';
 
-$getLists = $conn->prepare("SELECT * FROM lists ORDER BY id ASC");
+$getLists = $conn->prepare("SELECT * FROM lists ORDER BY position ASC");
 $getLists->execute();
 $allLists = $getLists->fetchAll();
 
-$getCards = $conn->prepare("SELECT * FROM cards");
+$getCards = $conn->prepare("SELECT * FROM cards ORDER BY position ASC");
 $getCards->execute();
 $allCards = $getCards->fetchAll();
 
@@ -19,7 +19,7 @@ foreach ($allLists as $list) {
     <div class=\"list\">
         <div>
             <div>
-                <div class=\"listName\" onclick=\"listName($pos)\">$name</div>
+                <div class=\"listName\">$name</div>
                 <form class=\"hidden\" action=\"updateListName.php\" method=\"post\">
                     <input class=\"listNameEdit\" type=\"text\" value=\"$name\" name=\"name\">
                     <input type=\"hidden\" value=\"$id\" name=\"id\">
@@ -39,10 +39,14 @@ foreach ($allLists as $list) {
     echo("
         </ul>
         <div>
-            <button>+ Een kaart toevoegen</button>
-            <form>
-                <input type=\"text\" name=\"name\">
-                <input type=\"hidden\" name=\"fromList\">
+            <button class=\"buttonCreateCard\">+ Een kaart toevoegen</button>
+            <form class=\"hidden\" action=\"createCard.php\" method=\"post\">
+                <input class=\"createCardEdit newCardInput\" type=\"text\" name=\"name\" placeholder=\"Geef deze kaart een naam...\" required oninvalid=\"setCustomValidity(' ')\">
+                <input type=\"hidden\" name=\"fromList\" value=\"$id\"> <!--  -->
+                <div>
+                    <input type=\"submit\" value=\"Kaart toevoegen\">
+                    <button class=\"buttonCancel\"><i class=\"fas fa-times\"></i></button>
+                </div>
             </form>
         </div>
     </div>

@@ -8,9 +8,15 @@ $getLists = $conn->prepare("SELECT * FROM lists ORDER BY id DESC");
 $getLists->execute();
 $allLists = $getLists->fetchAll();
 
-$newPos = $allLists[0][2] + 1;
-/* echo($_POST['listname']);
- */ 
+if($allLists[0][2] = null)
+{
+  $newPos = 0;
+}
+else 
+{
+  $newPos = $allLists[0][2] + 1;
+}
+
 
 $createNewList = $conn->prepare("INSERT INTO lists (name , position) VALUES ('$newListName', $newPos)");
 $createNewList->execute();

@@ -2,10 +2,10 @@
 
 include 'connection.php';
 
-$newCardName = htmlspecialchars($_POST['name']);
+$newCardName = addslashes(htmlspecialchars($_POST['name']));
 $newCardFrom = htmlspecialchars($_POST['fromList']);
 
-$getLists = $conn->prepare("SELECT * FROM cards WHERE fromList = $newCardFrom ORDER BY fromList DESC");
+$getLists = $conn->prepare("SELECT * FROM cards WHERE fromList = $newCardFrom ORDER BY fromList DESC, position DESC");
 $getLists->execute();
 $allCardsInList = $getLists->fetchAll();
 
@@ -13,6 +13,7 @@ $allCardsInList = $getLists->fetchAll();
 if($allCardsInList == null)
 {
   $newPos = 0;
+  echo("it's empty");
 }
 else 
 {

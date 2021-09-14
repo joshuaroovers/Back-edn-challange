@@ -21,7 +21,7 @@ foreach ($allLists as $list) {
             <div>
                 <div class=\"listName\">$name</div>
                 <form class=\"hidden\" action=\"updateListName.php\" method=\"post\">
-                    <input class=\"listNameEdit\" type=\"text\" value=\"$name\" name=\"name\">
+                    <input class=\"listNameEdit\" value=\"$name\" type=\"text\" name=\"name\" maxlength=\"88\">
                     <input type=\"hidden\" value=\"$id\" name=\"id\">
                 </form>
             </div>
@@ -33,21 +33,32 @@ foreach ($allLists as $list) {
         if($card[5] == $list[0])
         {
             $cardName = $card[1];
-            echo("<li>$cardName</li>");
+            $cardPos = $card[6];
+            $cardFromList = $card[5];
+            echo("
+            <li>
+                <div class=\"card\">$cardName</div>
+                <form class=\"hidden\" action=\"updateListName.php\" method=\"post\">
+                    <input class=\"listNameEdit card\" value=\"$cardName\" type=\"text\" name=\"name\" maxlength=\"88\">
+                    <input type=\"hidden\" value=\"$cardFromList\" name=\"fromList\">
+                    <input type=\"hidden\" value=\"$cardPos\" name=\"pos\">
+                </form>
+            </li>"
+        );
         }
     }
     echo("
-        </ul>
-        <div>
-            <button class=\"buttonCreateCard\">+ Een kaart toevoegen</button>
             <form class=\"hidden\" action=\"createCard.php\" method=\"post\">
                 <input class=\"createCardEdit newCardInput\" type=\"text\" name=\"name\" placeholder=\"Geef deze kaart een naam...\" required oninvalid=\"setCustomValidity(' ')\">
                 <input type=\"hidden\" name=\"fromList\" value=\"$id\"> <!--  -->
-                <div>
-                    <input type=\"submit\" value=\"Kaart toevoegen\">
-                    <button class=\"buttonCancel\"><i class=\"fas fa-times\"></i></button>
-                </div>
             </form>
+        </ul>
+        <div>
+            <button class=\"buttonCreateCard\">+ Een kaart toevoegen</button>
+            <div class=\"hidden\">
+                <input type=\"submit\" value=\"Kaart toevoegen\">
+                <button class=\"buttonCancel\"><i class=\"fas fa-times\"></i></button>
+            </div>
         </div>
     </div>
     ");

@@ -2,7 +2,7 @@
 
 include 'connection.php';
 
-$newListName = htmlspecialchars($_POST['listname']);
+$newListName = addslashes(htmlspecialchars($_POST['listname']));
 
 $getLists = $conn->prepare("SELECT * FROM lists ORDER BY id DESC");
 $getLists->execute();

@@ -36,8 +36,10 @@ for(x = 0; x < document.getElementsByClassName("buttonCreateCard").length; x++)/
 {
     document.getElementsByClassName("buttonCreateCard")[x].onclick = function() {
         this.classList.toggle("hidden");
-        this.parentElement.lastElementChild.classList.toggle("hidden")
-        this.parentElement.lastElementChild.firstElementChild.select();
+        this.parentElement.lastElementChild.classList.toggle("hidden");
+        this.parentElement.parentElement.childNodes[3].lastElementChild.classList.toggle("hidden")
+        this.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.select();
+        this.parentElement.parentElement.childNodes[3].scrollTop = this.parentElement.parentElement.childNodes[3].scrollHeight;
     }
 }
 
@@ -54,10 +56,26 @@ for(x = 0; x < document.getElementsByClassName("cardCreateEdit").length; x++) /*
 for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)/*  cancel button create card  */
 {
     document.getElementsByClassName("buttonCancel")[x].onclick = function() {
-        this.parentElement.parentElement.classList.toggle("hidden");
-        this.parentElement.parentElement.parentElement.firstElementChild.classList.toggle("hidden")
+        this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
+        this.parentElement.classList.toggle("hidden");
+        this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.classList.toggle("hidden")
     }
 }
+
+for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)/*  submit button create card  */
+{
+    document.getElementsByClassName("buttonCancel")[x].parentElement.firstElementChild.onclick = function() {
+        if(this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.innerHTML = null)
+        {}
+        else
+        {
+            console.log();
+            this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.submit();
+        }
+    }
+}
+
+/* NEED TO MAKE THE ONCLICKS FOR THE CARD EDIT */
 
 
 

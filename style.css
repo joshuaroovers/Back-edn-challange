@@ -47,6 +47,7 @@ body
     padding-bottom: 30px;
     height: 620px;
     overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
 }
 /*#region listcontainer scrollbar*/
@@ -73,6 +74,7 @@ body
     background-color: gainsboro;
     font-size: 18px !important;
     width: 275px;
+    max-height: 600px;
     border-radius: 2px;
     margin: 0px 4px 0px 4px;
     padding: 5px;
@@ -95,33 +97,40 @@ body
 /*#endregion*/
 .list ul  /* cards list */
 {
-    max-height: 500px;
+    max-height: 450px;
     overflow-y: auto;
     padding: 0px 5px 0px 5px;
     margin: 0px;
 }
-.list ul li, .newCardInput /* cards */
+.card, .newCardInput /* cards */
 {
+    width: calc(100% - 14px);
     list-style-type: none;
     background-color: whitesmoke !important;
     font-family: inherit;
+    font-size: 18px;
     margin: 10px 0px 10px 0px;
     padding: 7px;
     white-space: normal;
     overflow-wrap: break-word;
     border-radius: 3px;
+    border: none;
     box-shadow: 0px 1px rgb(109, 109, 109);
 }
 .list > ul > :first-child /* first card in list */
 {
     margin-top: 0px;
 }
+.list > ul > :last-child
+{
+    margin-bottom: 5px;
+}
 
 div.list > div:last-child /* add new card container */
 {
     padding: 0px 5px 0px 5px;
 }
-.list > :last-child > :first-child, .list > :last-child > :last-child > :first-child /* add new card button & add new card form input*/
+.list > :last-child > :first-child, .list > ul > :last-child > :first-child /* add new card button & add new card form input*/
 {
     width: calc(100% - 30px);
     font-size: 15px;
@@ -131,6 +140,10 @@ div.list > div:last-child /* add new card container */
     margin: 0px;
     width: calc(100% - 14px);
     padding: 7px;
+}
+.list > :last-child > :first-child
+{
+    height: 37px;
 }
 
 
@@ -192,7 +205,7 @@ div.list > div:last-child /* add new card container */
     width: calc(100% - 30px);
     padding: 10px 15px;
 }
-#buttonCreateListActive > :last-child > *, div.list > div:last-child > :last-child > :last-child > * /* new list/card buttons */
+#buttonCreateListActive > :last-child > *, div.list > :last-child > :last-child > * /* new list/card buttons */
 {
     font-size: 15px;
     border: none;
@@ -203,13 +216,13 @@ div.list > div:last-child /* add new card container */
     background-color: whitesmoke;
     cursor: pointer;
 }
-#buttonCreateListActive > :last-child > :first-child, div.list > :last-child > :last-child > :last-child > :first-child /* new list/card first buttons */
+#buttonCreateListActive > :last-child > :first-child, div.list > :last-child > :last-child > :first-child /* new list/card first buttons */
 {
     width: fit-content;
     background-color: var(--themeColor);
     color: white;
 }
-#buttonCreateListActive > :first-child:focus-visible, div.list > :last-child > :last-child > :first-child/* new list/card input */
+#buttonCreateListActive > :first-child:focus-visible, div.list > ul > :last-child > :first-child/* new list/card input */
 {
     outline-color: var(--themeColor);
 }

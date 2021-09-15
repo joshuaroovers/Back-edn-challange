@@ -13,7 +13,6 @@ $allCardsInList = $getLists->fetchAll();
 if($allCardsInList == null)
 {
   $newPos = 0;
-  echo("it's empty");
 }
 else 
 {

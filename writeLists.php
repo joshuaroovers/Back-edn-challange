@@ -37,9 +37,12 @@ foreach ($allLists as $list) {
             $cardFromList = $card[5];
             echo("
             <li>
-                <div class=\"card\">$cardName</div>
-                <form class=\"hidden\" action=\"updateListName.php\" method=\"post\">
-                    <input class=\"listNameEdit card\" value=\"$cardName\" type=\"text\" name=\"name\" maxlength=\"88\">
+                <div class=\"card\">       
+                    <button><i class=\"fas fa-angle-down\"></i></button>
+                    <span class=\"cardText\">$cardName</span>
+                </div>
+                <form class=\"hidden\" action=\"updateCardName.php\" method=\"post\">
+                    <input class=\"cardEdit\" value=\"$cardName\" type=\"text\" name=\"name\">
                     <input type=\"hidden\" value=\"$cardFromList\" name=\"fromList\">
                     <input type=\"hidden\" value=\"$cardPos\" name=\"pos\">
                 </form>

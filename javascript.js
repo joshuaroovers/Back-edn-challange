@@ -43,39 +43,55 @@ for(x = 0; x < document.getElementsByClassName("buttonCreateCard").length; x++)/
     }
 }
 
-/* DOESNT WORK */
-for(x = 0; x < document.getElementsByClassName("cardCreateEdit").length; x++) /* hide create card form on blur input */ 
+
+/* for(x = 0; x < document.getElementsByClassName("createCardEdit").length; x++)  //hide create card form on input blur  
 {
-    document.getElementsByClassName("cardCreateEdit")[x].addEventListener("blur", function(){
+    document.getElementsByClassName("createCardEdit")[x].addEventListener("blur", function(){
         this.parentElement.classList.toggle("hidden");
-        this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
+        this.parentElement.parentElement.parentElement.lastElementChild.firstElementChild.classList.toggle("hidden");
+        this.parentElement.parentElement.parentElement.lastElementChild.lastElementChild.classList.toggle("hidden");
     });
-}
+} */ //this breakes all other buttons :p
 
-
-for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)/*  cancel button create card  */
+for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)/*  cancel button hide form, create card  */
 {
     document.getElementsByClassName("buttonCancel")[x].onclick = function() {
         this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
         this.parentElement.classList.toggle("hidden");
         this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.classList.toggle("hidden")
     }
-}
+}/* technically I could just remove the functionality of the button cuz it already hides everything on blur */
 
 for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)/*  submit button create card  */
 {
     document.getElementsByClassName("buttonCancel")[x].parentElement.firstElementChild.onclick = function() {
-        if(this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.innerHTML = null)
+        if(this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.innerHTML == null)
         {}
         else
         {
-            console.log();
             this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.submit();
         }
     }
 }
+//#region card interaction
+for(x = 0; x < document.getElementsByClassName("cardText").length; x++)/* card edit show form */
+{
+    document.getElementsByClassName("cardText")[x].onclick = function() {
+        this.parentElement.classList.toggle("hidden");
+        this.parentElement.parentElement.lastElementChild.classList.toggle("hidden");
+        this.parentElement.parentElement.lastElementChild.firstElementChild.select();
+    }
+}
 
-/* NEED TO MAKE THE ONCLICKS FOR THE CARD EDIT */
+for(x = 0; x < document.getElementsByClassName("cardEdit").length; x++) /* card edit hide form on blur */ 
+{
+    document.getElementsByClassName("cardEdit")[x].addEventListener("blur", function(){
+        this.parentElement.classList.toggle("hidden");
+        this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
+    });
+}
+//#endregion
+
 
 
 

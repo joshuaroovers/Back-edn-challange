@@ -102,20 +102,32 @@ body
     padding: 0px 5px 0px 5px;
     margin: 0px;
 }
-.card, .newCardInput /* cards */
+.card, .cardEdit, .newCardInput /* cards */
 {
     width: calc(100% - 14px);
     list-style-type: none;
     background-color: whitesmoke !important;
     font-family: inherit;
     font-size: 18px;
-    margin: 10px 0px 10px 0px;
+    margin: 0px 0px 10px 0px;
     padding: 7px;
     white-space: normal;
     overflow-wrap: break-word;
     border-radius: 3px;
     border: none;
     box-shadow: 0px 1px rgb(109, 109, 109);
+}
+.card > :first-child
+{
+    float: right;
+    padding: 0px;
+    line-height: 12px;
+    height: 16px;
+    width: 16px;
+    border: 0.5px rgb(220 220 220) solid
+    ;border-radius: 3px;
+    vertical-align: top;margin: 2px 2px 0px 0px;
+    background-color: gainsboro;
 }
 .list > ul > :first-child /* first card in list */
 {
@@ -222,8 +234,9 @@ div.list > div:last-child /* add new card container */
     background-color: var(--themeColor);
     color: white;
 }
-#buttonCreateListActive > :first-child:focus-visible, div.list > ul > :last-child > :first-child/* new list/card input */
+/*#endregion  */
+
+#buttonCreateListActive > :first-child:focus-visible, .newCardInput, .cardEdit /* new list input/new card input/edit card input */
 {
     outline-color: var(--themeColor);
 }
-/*#endregion  */

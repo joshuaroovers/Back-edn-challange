@@ -29,9 +29,14 @@
                     </div>
                     <ul>
                         <li>
-                            <div class="card">1</div>
+                            <div class="card">
+                            
+                                <button style=""><i class="fas fa-angle-down"></i></button>
+                            
+                                <span class="cardText">11111111111111111111111111111111111111111111111111111<span>
+                            </div>
                             <form class="hidden" action="updateCardName.php" method="post" >
-                                <input class="card" type="text" value="1">
+                                <input class="cardEdit" type="text" value="1">
                                 <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
                             </form>
                         </li>

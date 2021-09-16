@@ -67,13 +67,13 @@ which is why I removed it dum dum
 for(x = 0; x < document.getElementsByClassName("buttonSubmit").length -1; x++)/*  submit button create card  */
 {
     document.getElementsByClassName("buttonSubmit")[x].onclick = function() {
-        if(this.parentElement.parentElement.parentElement.childNodes[3].childNodes[3].firstElementChild.value == null)
+        if(this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.value == null)
         {
-            this.parentElement.parentElement.parentElement.childNodes[3].childNodes[3].firstElementChild.focus();
+            this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.focus();
         }
         else
         {
-            this.parentElement.parentElement.parentElement.childNodes[3].childNodes[3].submit();
+            this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.submit();
         }
     }
 }

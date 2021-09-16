@@ -28,21 +28,19 @@
                         <div></div>
                     </div>
                     <ul>
-                        <li>
-                            <div class="card">
-                                <button style=""><i class="fas fa-angle-down"></i></button>
-                                <span>
-                                    <span class="cardText">1</span>
-                                    <form class="hidden" action="updateCardName.php" method="post" >
-                                        <input class="cardEdit" type="text" value="1">
-                                        <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
-                                    </form>
-                                </span>
-                            </div>
-                            
+                        <li class="card">
+                         
+                            <button style=""><i class="fas fa-angle-down"></i></button>
+                            <span>
+                                <span class="cardText">1</span>
+                                <form class="hidden" action="updateCardName.php" method="post" >
+                                    <input class="cardEdit" type="text" value="1">
+                                    <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
+                                </form>
+                            </span>
                             <div>
 
-                            </div>
+                            </div>                             
                         </li>
                         <form class="hidden" action="createCard.php" method="post">
                             <input class="createCardEdit newCardInput edit" type="text" name="name" placeholder="Geef deze kaart een naam..." required oninvalid="setCustomValidity(' ')">

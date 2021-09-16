@@ -21,7 +21,7 @@
                         <div>
                             <div class="listName" >*name</div>
                             <form class="hidden" action="updateListName.php" method="post" >
-                                <input class="listNameEdit" type="text" value="*name">
+                                <input class="listNameEdit edit" type="text" value="*name">
                                 <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
                             </form>
                         </div>
@@ -30,25 +30,29 @@
                     <ul>
                         <li>
                             <div class="card">
-                            
                                 <button style=""><i class="fas fa-angle-down"></i></button>
-                            
-                                <span class="cardText">11111111111111111111111111111111111111111111111111111<span>
+                                <span>
+                                    <span class="cardText">1</span>
+                                    <form class="hidden" action="updateCardName.php" method="post" >
+                                        <input class="cardEdit" type="text" value="1">
+                                        <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
+                                    </form>
+                                </span>
                             </div>
-                            <form class="hidden" action="updateCardName.php" method="post" >
-                                <input class="cardEdit" type="text" value="1">
-                                <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
-                            </form>
+                            
+                            <div>
+
+                            </div>
                         </li>
                         <form class="hidden" action="createCard.php" method="post">
-                            <input class="createCardEdit newCardInput" type="text" name="name" placeholder="Geef deze kaart een naam..." required oninvalid="setCustomValidity(' ')">
+                            <input class="createCardEdit newCardInput edit" type="text" name="name" placeholder="Geef deze kaart een naam..." required oninvalid="setCustomValidity(' ')">
                             <input type="hidden" name="fromList" value="1">
                         </form>
                     </ul>
                     <div>
                         <button class="buttonCreateCard">+ Een kaart toevoegen</button>
                         <div class="hidden">
-                            <button >Kaart toevoegen</button>
+                            <button class="buttonSubmit" >Kaart toevoegen</button>
                             <button class="buttonCancel"><i class="fas fa-times b"></i></button>
                         </div>
                         
@@ -61,7 +65,7 @@
                 </button>
 
                 <form id="buttonCreateListActive" class="list hidden" action="createList.php" method="post">
-                    <input type="text" value="" name="listname" placeholder="Geef deze lijst een naam..." required oninvalid="setCustomValidity(' ')">
+                    <input class="edit" type="text" value="" name="listname" placeholder="Geef deze lijst een naam..." required oninvalid="setCustomValidity(' ')">
                     <div>
                         <input type="submit" value="Lijst toevoegen">
                         <button class="buttonCancel"><i class="fas fa-times"></i></button>

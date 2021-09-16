@@ -102,7 +102,7 @@ body
     padding: 0px 5px 0px 5px;
     margin: 0px;
 }
-.card, .cardEdit, .newCardInput /* cards */
+.card/* , .cardEdit */, .newCardInput /* cards */
 {
     width: calc(100% - 14px);
     list-style-type: none;
@@ -236,7 +236,21 @@ div.list > div:last-child /* add new card container */
 }
 /*#endregion  */
 
-#buttonCreateListActive > :first-child:focus-visible, .newCardInput, .cardEdit /* new list input/new card input/edit card input */
+.edit /* new list input/new card input/edit card input */
 {
     outline-color: var(--themeColor);
+}
+
+.cardEdit
+{
+    border: none;
+    padding: 0px;
+    width: 100%;
+    font-size: 18px;
+    font-family: inherit;
+    background-color: inherit;
+}
+form
+{
+    contain: content;
 }

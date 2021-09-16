@@ -53,23 +53,27 @@ for(x = 0; x < document.getElementsByClassName("buttonCreateCard").length; x++)/
     });
 } */ //this breakes all other buttons :p
 
-for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)/*  cancel button hide form, create card  */
+/* for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)  //cancel button hide form, create card  
 {
     document.getElementsByClassName("buttonCancel")[x].onclick = function() {
         this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
         this.parentElement.classList.toggle("hidden");
         this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.classList.toggle("hidden")
     }
-}/* technically I could just remove the functionality of the button cuz it already hides everything on blur */
+} *//* technically I could just remove the functionality of the button cuz it already hides everything on blur which isn't great behavior
+which is why I removed it dum dum
+*/
 
-for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)/*  submit button create card  */
+for(x = 0; x < document.getElementsByClassName("buttonSubmit").length -1; x++)/*  submit button create card  */
 {
-    document.getElementsByClassName("buttonCancel")[x].parentElement.firstElementChild.onclick = function() {
-        if(this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.innerHTML == null)
-        {}
+    document.getElementsByClassName("buttonSubmit")[x].onclick = function() {
+        if(this.parentElement.parentElement.parentElement.childNodes[3].childNodes[3].firstElementChild.value == null)
+        {
+            this.parentElement.parentElement.parentElement.childNodes[3].childNodes[3].firstElementChild.focus();
+        }
         else
         {
-            this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.submit();
+            this.parentElement.parentElement.parentElement.childNodes[3].childNodes[3].submit();
         }
     }
 }
@@ -77,9 +81,9 @@ for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)/*
 for(x = 0; x < document.getElementsByClassName("cardText").length; x++)/* card edit show form */
 {
     document.getElementsByClassName("cardText")[x].onclick = function() {
-        this.parentElement.classList.toggle("hidden");
-        this.parentElement.parentElement.lastElementChild.classList.toggle("hidden");
-        this.parentElement.parentElement.lastElementChild.firstElementChild.select();
+        this.classList.toggle("hidden");
+        this.parentElement.lastElementChild.classList.toggle("hidden");
+        this.parentElement.lastElementChild.firstElementChild.select();
     }
 }
 

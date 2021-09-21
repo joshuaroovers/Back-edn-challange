@@ -37,7 +37,7 @@ foreach ($allLists as $list) {
             $cardFromList = $card[5];
             echo("
             <li class=\"card\">
-                <button><i class=\"fas fa-angle-down\"></i></button>
+                <button class=\"cardButtonDropDown\"><i class=\"fas fa-angle-down\"></i></button>
                 <span>
                     <span class=\"cardText\">$cardName</span>
                     <form class=\"hidden\" action=\"updateCardName.php\" method=\"post\">
@@ -53,15 +53,15 @@ foreach ($allLists as $list) {
         }
     }
     echo("
-            <form class=\"hidden\" action=\"createCard.php\" method=\"post\">
-                <input class=\"createCardEdit newCardInput\" type=\"text\" name=\"name\" placeholder=\"Geef deze kaart een naam...\" required oninvalid=\"setCustomValidity(' ')\">
+            <form class=\"hidden\" action=\"createCard.php\" method=\"post\" target=\"redirect\">
+                <input class=\"createCardEdit newCardInput\" type=\"text\" name=\"name\" placeholder=\"Geef deze kaart een naam...\" required oninvalid=\"setCustomValidity(' ')\" value=\"\">
                 <input type=\"hidden\" name=\"fromList\" value=\"$id\"> <!--  -->
             </form>
         </ul>
         <div>
             <button class=\"buttonCreateCard\">+ Een kaart toevoegen</button>
             <div class=\"hidden\">
-                <input type=\"submit\" value=\"Kaart toevoegen\">
+            <button class=\"buttonSubmit\" >Kaart toevoegen</button>
                 <button class=\"buttonCancel\"><i class=\"fas fa-times\"></i></button>
             </div>
         </div>

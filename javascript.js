@@ -53,21 +53,21 @@ for(x = 0; x < document.getElementsByClassName("buttonCreateCard").length; x++)/
     });
 } */ //this breakes all other buttons :p
 
-/* for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)  //cancel button hide form, create card  
+for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)  //cancel button hide form, create card  
 {
     document.getElementsByClassName("buttonCancel")[x].onclick = function() {
         this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
         this.parentElement.classList.toggle("hidden");
         this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.classList.toggle("hidden")
     }
-} *//* technically I could just remove the functionality of the button cuz it already hides everything on blur which isn't great behavior
-which is why I removed it dum dum
+}/* technically I could just remove the functionality of the button cuz it already hides everything on blur which isn't great behavior
+which is why I removed it dum dum but now it won't submit cuz of the blur so I do need it
 */
 
 for(x = 0; x < document.getElementsByClassName("buttonSubmit").length -1; x++)/*  submit button create card  */
 {
     document.getElementsByClassName("buttonSubmit")[x].onclick = function() {
-        if(this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.value == null)
+        if(this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.value == '')
         {
             this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.focus();
         }

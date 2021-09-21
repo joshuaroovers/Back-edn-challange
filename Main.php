@@ -30,7 +30,7 @@
                     <ul>
                         <li class="card">
                          
-                            <button style=""><i class="fas fa-angle-down"></i></button>
+                            <button class="cardButtonDropDown"><i class="fas fa-angle-down"></i></button>
                             <span>
                                 <span class="cardText">1</span>
                                 <form class="hidden" action="updateCardName.php" method="post" >
@@ -38,7 +38,20 @@
                                     <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
                                 </form>
                             </span>
-                            <div>
+                            <div class="cardDropDown">
+                                <div>
+                                    <div></div>
+                                    <form action>
+                                        <input class="edit" type="text" placeholder="description..">
+                                    </form>
+                                </div>
+                                <div>                            
+                                    <button class="cardDelete"><i class="far fa-trash-alt"></i></button>
+                                    <form class="cardDuration"> 
+                                        <input type="text" value="600">
+                                        <i class="far fa-clock"></i>
+                                    </form>
+                                </div>
 
                             </div>                             
                         </li>
@@ -72,6 +85,7 @@
 
             </div>
         </div>
+        <iframe class="hidden" name="redirect"></iframe>
     </body>
     <script src='javascript.js'></script>
 </html>

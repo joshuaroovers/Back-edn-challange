@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.php';
+include '../connection.php';
 
 $newListName = addslashes(htmlspecialchars($_POST['listname']));
 
@@ -21,6 +21,6 @@ else
 $createNewList = $conn->prepare("INSERT INTO lists (name , position) VALUES ('$newListName', $newPos)");
 $createNewList->execute();
 
-include 'Main.php';
+header('Location:../Main.php');
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.php';
+include '../connection.php';
 
 $newCardName = addslashes(htmlspecialchars($_POST['name']));
 $newCardFrom = htmlspecialchars($_POST['fromList']);
@@ -19,9 +19,9 @@ else
   $newPos = $allCardsInList[0][6] + 1;
 }
 
-$createNewCard = $conn->prepare("INSERT INTO cards (name, fromList , position) VALUES ('$newCardName',$newCardFrom, $newPos)");
+$createNewCard = $conn->prepare("INSERT INTO cards (name, description, fromList, position) VALUES ('$newCardName','description...',$newCardFrom, $newPos)");
 $createNewCard->execute();
 
-include 'Main.php';
+header('Location:../Main.php');
 
 ?>

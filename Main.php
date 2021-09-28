@@ -19,6 +19,12 @@
                 <div class="list">
                     <div>
                         <div>
+                            <div style="float: right; position: relative">
+                                <div style="margin: 4px; padding: 4px 12px;"><i class="fas fa-ellipsis-v"></i></div>
+                                <div style="position: absolute; margin-left: 50px; margin-top: -37.6px; background-color: red; padding: 0.5px">
+                                
+                                </div>
+                            </div>      
                             <div class="listName" >*name</div>
                             <form class="hidden" action="updateListName.php" method="post" >
                                 <input class="listNameEdit edit" type="text" value="*name">
@@ -30,7 +36,7 @@
                     <ul>
                         <li class="card">
                          
-                            <button class="cardButtonDropDown"><i class="fas fa-angle-down"></i></button>
+                            <button class="cardButtonDropDown "><i class="fas fa-angle-down"></i></button>
                             <span>
                                 <span class="cardText">1</span>
                                 <form class="hidden" action="updateCardName.php" method="post" >
@@ -38,17 +44,21 @@
                                     <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
                                 </form>
                             </span>
-                            <div class="cardDropDown">
-                                <div>
-                                    <div></div>
-                                    <form action>
-                                        <input class="edit" type="text" placeholder="description..">
+                            <div class="cardDropDown hidden">
+                                <div class="cardDesc">
+                                    <div class="cardDescText">2</div>
+                                    <form class="hidden" action="updateCardDesc.php" method="post">
+                                        <input class="edit" type="text" value="2">
+                                        <input type="hidden">
                                     </form>
                                 </div>
-                                <div>                            
-                                    <button class="cardDelete"><i class="far fa-trash-alt"></i></button>
-                                    <form class="cardDuration"> 
-                                        <input type="text" value="600">
+                                <div>    
+                                    <form class="cardDeleteContainer" action="deleteCard.php" method="post">                        
+                                        <button class="cardDelete"><i class="far fa-trash-alt"></i></button>
+                                        <input type="hidden">
+                                    </form>
+                                    <form class="cardDuration" action="updateCardDur.php" method="post"> 
+                                        <input class="cardDurInput" type="number" value="3" maxlength='3'>
                                         <i class="far fa-clock"></i>
                                     </form>
                                 </div>
@@ -75,7 +85,7 @@
                     <div class="listName">+ Voeg een lijst toe</div>
                 </button>
 
-                <form id="buttonCreateListActive" class="list hidden" action="createList.php" method="post">
+                <form id="buttonCreateListActive" class="list hidden" action="createList.php" method="post" target="redirect">
                     <input class="edit" type="text" value="" name="listname" placeholder="Geef deze lijst een naam..." required oninvalid="setCustomValidity(' ')">
                     <div>
                         <input type="submit" value="Lijst toevoegen">
@@ -85,7 +95,6 @@
 
             </div>
         </div>
-        <iframe class="hidden" name="redirect"></iframe>
     </body>
     <script src='javascript.js'></script>
 </html>

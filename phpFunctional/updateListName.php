@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include '../connection.php';
 
 $id = $_POST['id'];
 $name = addslashes(htmlspecialchars($_POST["name"]));
@@ -26,7 +26,7 @@ $updateListName->execute();
   $createNewItem->execute();
 }
 */
-include 'Main.php';
+header('Location:../Main.php');
 
 ?>
 

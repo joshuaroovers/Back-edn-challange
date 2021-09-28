@@ -97,6 +97,28 @@ for(x = 0; x < document.getElementsByClassName("cardEdit").length; x++) /* card 
 //#endregion
 
 
+for(x = 0; x < document.getElementsByClassName("cardButtonDropDown").length; x++)
+{
+    document.getElementsByClassName("cardButtonDropDown")[x].onclick = function() {
+        this.classList.toggle("cbddFlip");
+        this.parentElement.lastElementChild.classList.toggle("hidden");
+        /* dropdown = document.getElementsByClassName("cardDropDown")[x];
+        dropdown.classList.toggle("hidden"); */
+    }
+}
 
+for(x = 0; x < document.getElementsByClassName("cardDescText").length; x++)
+{
+    document.getElementsByClassName("cardDescText")[x].onclick = function() {
+        this.classList.toggle("hidden");
+        this.parentElement.lastElementChild.classList.toggle("hidden")
+        this.parentElement.lastElementChild.firstElementChild.select();
+    }
+}
 
-
+for(x = 0; x < document.getElementsByClassName("cardDelete").length; x++)
+{
+    document.getElementsByClassName("cardDelete")[x].onclick() = function() {
+        this.parentElement.submit();
+    }
+}

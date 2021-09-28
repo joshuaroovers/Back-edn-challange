@@ -19,6 +19,11 @@ body
 {
     display: none;
 }
+input
+{
+    width: 100%;
+    outline-color: var(--themeColor);
+}
 
 #mainContainer
 {
@@ -133,11 +138,28 @@ body
     margin: 2px 2px 0px 0px;
     background-color: gainsboro;
 }
+.cbddFlip
+{
+    transform: rotate(180deg);
+}
 .cardDropDown
 {
     border-top: 1px black solid; 
     padding-top:inherit; 
     margin-top: 7px;
+}
+.cardDesc
+{
+    margin-bottom: 10px;
+}
+.cardDesc > * > * , .cardDesc > * 
+{
+    font-size: 16px;
+    font-family: inherit;
+    padding: 0px;
+    border: none;
+    background-color: inherit;
+    
 }
 .cardDuration
 {
@@ -149,22 +171,27 @@ body
     background-color: var(--themeColor);
     color: var(--themeFontColor);
 }
-.cardDuration > :first-child
+.cardDurInput
 {
+    outline: none;
     width: 22px;
     border: none; 
     color:inherit;
     background-color: inherit; 
 }
 .cardDelete
-{
-    float: right;
+{  
     padding: 3px 5px;
     border-radius: 3px;
     border: none;
     background-color: rgb(255, 100, 100);
     color: whitesmoke
 }
+.cardDeleteContainer
+{
+    float: right;
+}
+
 /*#endregion*/
 .list > ul > :first-child /* first card in list */
 {
@@ -269,10 +296,10 @@ div.list > div:last-child /* add new card container */
 }
 /*#endregion  */
 
-.edit /* new list input/new card input/edit card input */
+/* .edit /* new list input/new card input/edit card input 
 {
     outline-color: var(--themeColor);
-}
+} */
 
 .cardEdit
 {
@@ -286,4 +313,10 @@ div.list > div:last-child /* add new card container */
 form
 {
     contain: content;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

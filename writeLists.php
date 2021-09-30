@@ -5,9 +5,25 @@ $getLists = $conn->prepare("SELECT * FROM lists ORDER BY position ASC");
 $getLists->execute();
 $allLists = $getLists->fetchAll();
 
+
 $getCards = $conn->prepare("SELECT * FROM cards ORDER BY position ASC");
 $getCards->execute();
-$allCards = $getCards->fetchAll();
+$allCardsPosA = $getCards->fetchAll();
+
+$getCards = $conn->prepare("SELECT * FROM cards ORDER BY position DESC");
+$getCards->execute();
+$allCardsPosD = $getCards->fetchAll();
+
+
+$getCards = $conn->prepare("SELECT * FROM cards ORDER BY duration ASC");
+$getCards->execute();
+$allCardsDurA = $getCards->fetchAll();
+
+$getCards = $conn->prepare("SELECT * FROM cards ORDER BY duration DESC");
+$getCards->execute();
+$allCardsDurD = $getCards->fetchAll();
+
+
 
 
 foreach ($allLists as $list) {
@@ -15,6 +31,8 @@ foreach ($allLists as $list) {
     $id = $list[0];
     $name = $list[1];
     $pos = $list[2];
+    $sortBy = $list[3];
+    $sortDir = $list[4];
     echo("
     <div class=\"list\">
         <div>
@@ -29,6 +47,28 @@ foreach ($allLists as $list) {
         </div>
         <ul>
     ");
+    if($sortBy != "default")
+    {
+        if($sortDir == "ASC")
+        {
+            $allCards = $allCardsDurA;
+        }
+        else if ($sortDir == "DESC")
+        {
+            $allCards = $allCardsDurD;
+        }
+    }
+    else
+    {
+        if($sortDir == "ASC")
+        {
+            $allCards = $allCardsPosA;
+        }
+        else if ($sortDir == "DESC")
+        {
+            $allCards = $allCardsPosD;
+        }
+    }
     foreach ($allCards as $card) {
         if($card[5] == $list[0])
         {
@@ -60,7 +100,7 @@ foreach ($allLists as $list) {
                     </div>
                     <div>    
                         <form class=\"cardDeleteContainer\" action=\"phpFunctional/deleteCard.php\" method=\"post\">                        
-                            <button class=\"cardDelete\"><i class=\"far fa-trash-alt\"></i></button>
+                            <button class=\"deleteButton\"><i class=\"far fa-trash-alt\"></i></button>
                             <input type=\"hidden\" value=\"$cardId\" name=\"cardId\">
                         </form>
                         <form class=\"cardDuration\" action=\"phpFunctional/updateCardDur.php\" method=\"post\"> 

@@ -179,13 +179,14 @@ input
     color:inherit;
     background-color: inherit; 
 }
-.cardDelete
+.deleteButton
 {  
     padding: 3px 5px;
     border-radius: 3px;
     border: none;
     background-color: rgb(255, 100, 100);
-    color: whitesmoke
+    color: whitesmoke;
+    text-align: center;
 }
 .cardDeleteContainer
 {
@@ -193,6 +194,45 @@ input
 }
 
 /*#endregion*/
+
+/*#region list menu  */
+.listOptions
+{
+    float: right; 
+    position: relative;
+}
+.listOptionsButton
+{
+    margin: 4px; 
+    padding: 4px 12px;
+}
+.listMenu
+{
+    position: absolute; 
+    margin-left: 50px; 
+    margin-top: -37.6px; 
+    border: var(--themeColor) 4px solid;
+    border-radius: 3px;
+    background-color: gainsboro; 
+    padding: 10px
+}
+select
+{
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    background-color: whitesmoke;
+    margin-bottom: 5px;
+    font-size: 16px;
+
+}
+select > option
+{   
+    
+}
+/*#endregion  */
+
 .list > ul > :first-child /* first card in list */
 {
     margin-top: 0px;
@@ -208,7 +248,7 @@ div.list > div:last-child /* add new card container */
 }
 .list > :last-child > :first-child, .list > ul > :last-child > :first-child /* add new card button & add new card form input*/
 {
-    width: calc(100% - 30px);
+    /* width: calc(100% - 30px); */
     font-size: 15px;
     text-align: left;
     border: none;
@@ -295,11 +335,6 @@ div.list > div:last-child /* add new card container */
     color: var(--themeFontColor);
 }
 /*#endregion  */
-
-/* .edit /* new list input/new card input/edit card input 
-{
-    outline-color: var(--themeColor);
-} */
 
 .cardEdit
 {

@@ -96,7 +96,7 @@ for(x = 0; x < document.getElementsByClassName("cardEdit").length; x++) /* card 
 }
 //#endregion
 
-
+//#region card dropdown
 for(x = 0; x < document.getElementsByClassName("cardButtonDropDown").length; x++)
 {
     document.getElementsByClassName("cardButtonDropDown")[x].onclick = function() {
@@ -115,10 +115,17 @@ for(x = 0; x < document.getElementsByClassName("cardDescText").length; x++)
         this.parentElement.lastElementChild.firstElementChild.select();
     }
 }
-
-for(x = 0; x < document.getElementsByClassName("cardDelete").length; x++)
+for(x = 0; x < document.getElementsByClassName("cardDescText").length; x++)   
+{
+    document.getElementsByClassName("cardDescText")[x].parentElement.lastElementChild.firstElementChild.addEventListener("blur", function(){
+        this.parentElement.classList.toggle("hidden");
+        this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
+    });
+}
+/* for(x = 0; x < document.getElementsByClassName("cardDelete").length; x++) //don't need it I guess but it's got an error now and I didn't change anything??
 {
     document.getElementsByClassName("cardDelete")[x].onclick() = function() {
         this.parentElement.submit();
     }
-}
+} */
+//#endregion

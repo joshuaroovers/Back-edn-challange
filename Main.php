@@ -19,17 +19,34 @@
                 <div class="list">
                     <div>
                         <div>
-                            <div style="float: right; position: relative">
-                                <div style="margin: 4px; padding: 4px 12px;"><i class="fas fa-ellipsis-v"></i></div>
-                                <div style="position: absolute; margin-left: 50px; margin-top: -37.6px; background-color: red; padding: 0.5px">
-                                
+                            <div class="listOptions">
+                                <div class="listOptionsButton"><i class="fas fa-ellipsis-v"></i></div>
+                                <div class="listMenu">
+                                    <form action="phpFunctional/updateListFilter.php" method="POST">
+                                        <div>Filter by:</div>
+                                        <select name="filter">
+                                            <option value="default">default</option>
+                                            <option value="duration">duration</option>
+                                        </select>
+                                        <select name="direction">
+                                            <option value="ASC">asending</option>
+                                            <option value="DESC">descending</option>
+                                        </select>
+                                        <input type="hidden" name='id' value="1">
+                                        <input type="submit" value="apply">
+                                    </form>
+                                    <div>
+                                        <button class="deleteButton"><i class="far fa-trash-alt"></i></button>
+                                    </div>
                                 </div>
-                            </div>      
-                            <div class="listName" >*name</div>
-                            <form class="hidden" action="updateListName.php" method="post" >
-                                <input class="listNameEdit edit" type="text" value="*name">
-                                <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
-                            </form>
+                            </div>   
+                            <div>   
+                                <div class="listName" >*name</div>
+                                <form class="hidden" action="updateListName.php" method="post" >
+                                    <input class="listNameEdit" type="text" value="*name">
+                                    <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
+                                </form>
+                            </div>
                         </div>
                         <div></div>
                     </div>
@@ -54,7 +71,7 @@
                                 </div>
                                 <div>    
                                     <form class="cardDeleteContainer" action="deleteCard.php" method="post">                        
-                                        <button class="cardDelete"><i class="far fa-trash-alt"></i></button>
+                                        <button class="deleteButton"><i class="far fa-trash-alt"></i></button>
                                         <input type="hidden">
                                     </form>
                                     <form class="cardDuration" action="updateCardDur.php" method="post"> 

@@ -232,6 +232,14 @@ select
     font-size: 16px;
 
 }
+.buttonSubmitFilter
+{
+    border: none;
+    border-radius: 3px;
+    background-color: var(--themeColor);
+    color: var(--themeFontColor);
+    padding: 3px;
+}
 .deleteList
 {
     width: 100%;

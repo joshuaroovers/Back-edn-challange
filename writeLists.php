@@ -51,7 +51,7 @@ foreach ($allLists as $list) {
                                 <option value=\"DESC\">descending</option>
                             </select>
                             <input type=\"hidden\" name=\"id\" value=\"$id\">
-                            <input type=\"submit\" value=\"apply\">
+                            <input class=\"buttonSubmitFilter\" type=\"submit\" value=\"apply\">
                         </form>
                         <form action=\"phpFunctional/deleteList.php\" method=\"post\">
                             <button class=\"deleteButton deleteList\"><i class=\"far fa-trash-alt\"></i></button>

@@ -2,7 +2,7 @@ create database if not exists `back-end-checklist`;
 
 use `back-end-checklist`;
 
-CREATE TABLE `back-end-checklist` ( 
+CREATE TABLE `lists` ( 
     `id` INT NOT NULL AUTO_INCREMENT , 
     `name` TEXT NOT NULL , 
     `position` INT NOT NULL , 
@@ -11,7 +11,7 @@ CREATE TABLE `back-end-checklist` (
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
-CREATE TABLE `back-end-checklist` ( 
+CREATE TABLE `cards` ( 
     `id` INT NOT NULL AUTO_INCREMENT , 
     `name` TEXT NOT NULL , 
     `description` TEXT NOT NULL , 

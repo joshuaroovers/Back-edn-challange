@@ -156,14 +156,4 @@ foreach ($allLists as $list) {
     ");
 }
 
-
-/* 
-$lists[x] what list
-
-$lists[x][0] id
-$lists[x][1] name
-$lists[x][2] pos
-
-*/
-
 ?>

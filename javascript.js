@@ -44,27 +44,16 @@ for(x = 0; x < document.getElementsByClassName("buttonCreateCard").length; x++)/
 }
 
 
-/* for(x = 0; x < document.getElementsByClassName("createCardEdit").length; x++)  //hide create card form on input blur  
-{
-    document.getElementsByClassName("createCardEdit")[x].addEventListener("blur", function(){
-        this.parentElement.classList.toggle("hidden");
-        this.parentElement.parentElement.parentElement.lastElementChild.firstElementChild.classList.toggle("hidden");
-        this.parentElement.parentElement.parentElement.lastElementChild.lastElementChild.classList.toggle("hidden");
-    });
-} */ //this breakes all other buttons :p
-
-for(x = 0; x < document.getElementsByClassName("buttonCancel").length -1; x++)  //cancel button hide form, create card  
+for(x = 0; x < document.getElementsByClassName("buttonCancel").length; x++)  //cancel button hide form, create card  
 {
     document.getElementsByClassName("buttonCancel")[x].onclick = function() {
         this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
         this.parentElement.classList.toggle("hidden");
         this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.classList.toggle("hidden")
     }
-}/* technically I could just remove the functionality of the button cuz it already hides everything on blur which isn't great behavior
-which is why I removed it dum dum but now it won't submit cuz of the blur so I do need it
-*/
+}
 
-for(x = 0; x < document.getElementsByClassName("buttonSubmit").length -1; x++)/*  submit button create card  */
+for(x = 0; x < document.getElementsByClassName("buttonSubmit").length; x++)/*  submit button create card  */
 {
     document.getElementsByClassName("buttonSubmit")[x].onclick = function() {
         if(this.parentElement.parentElement.parentElement.childNodes[3].lastElementChild.firstElementChild.value == '')
@@ -97,17 +86,15 @@ for(x = 0; x < document.getElementsByClassName("cardEdit").length; x++) /* card 
 //#endregion
 
 //#region card dropdown
-for(x = 0; x < document.getElementsByClassName("cardButtonDropDown").length; x++)
+for(x = 0; x < document.getElementsByClassName("cardButtonDropDown").length; x++) /* flip button arrow */
 {
     document.getElementsByClassName("cardButtonDropDown")[x].onclick = function() {
         this.classList.toggle("cbddFlip");
         this.parentElement.lastElementChild.classList.toggle("hidden");
-        /* dropdown = document.getElementsByClassName("cardDropDown")[x];
-        dropdown.classList.toggle("hidden"); */
     }
 }
 
-for(x = 0; x < document.getElementsByClassName("cardDescText").length; x++)
+for(x = 0; x < document.getElementsByClassName("cardDescText").length; x++) /* swap to card desc form */
 {
     document.getElementsByClassName("cardDescText")[x].onclick = function() {
         this.classList.toggle("hidden");
@@ -115,17 +102,19 @@ for(x = 0; x < document.getElementsByClassName("cardDescText").length; x++)
         this.parentElement.lastElementChild.firstElementChild.select();
     }
 }
-for(x = 0; x < document.getElementsByClassName("cardDescText").length; x++)   
+
+for(x = 0; x < document.getElementsByClassName("cardDescText").length; x++) /* hide card desc form on blur */ 
 {
     document.getElementsByClassName("cardDescText")[x].parentElement.lastElementChild.firstElementChild.addEventListener("blur", function(){
         this.parentElement.classList.toggle("hidden");
         this.parentElement.parentElement.firstElementChild.classList.toggle("hidden");
     });
 }
-/* for(x = 0; x < document.getElementsByClassName("cardDelete").length; x++) //don't need it I guess but it's got an error now and I didn't change anything??
+
+for(x = 0; x < document.getElementsByClassName("listOptionsButton").length; x++) /* toggle list menu */
 {
-    document.getElementsByClassName("cardDelete")[x].onclick() = function() {
-        this.parentElement.submit();
+    document.getElementsByClassName("listOptionsButton")[x].onclick = function() {
+        this.parentElement.childNodes[3].classList.toggle("hidden");
     }
-} */
+}
 //#endregion

@@ -16,12 +16,12 @@
                 include 'writeLists.php'
                 ?>
 
-                <div class="list">
+                <!-- <div class="list">
                     <div>
                         <div>
                             <div class="listOptions">
-                                <div class="listOptionsButton"><i class="fas fa-ellipsis-v"></i></div>
-                                <div class="listMenu">
+                                <button class="listOptionsButton"><i class="fas fa-ellipsis-v"></i></button>
+                                <div class="listMenu hidden">
                                     <form action="phpFunctional/updateListFilter.php" method="POST">
                                         <div>Filter by:</div>
                                         <select name="filter">
@@ -35,16 +35,15 @@
                                         <input type="hidden" name='id' value="1">
                                         <input type="submit" value="apply">
                                     </form>
-                                    <div>
-                                        <button class="deleteButton"><i class="far fa-trash-alt"></i></button>
-                                    </div>
+                                    <form action="phpFunctional/deleteList.php" method="post">
+                                        <button class="deleteButton deleteList"><i class="far fa-trash-alt"></i></button>
+                                    </form>
                                 </div>
                             </div>   
                             <div>   
                                 <div class="listName" >*name</div>
                                 <form class="hidden" action="updateListName.php" method="post" >
                                     <input class="listNameEdit" type="text" value="*name">
-                                    <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
                                 </form>
                             </div>
                         </div>
@@ -58,7 +57,6 @@
                                 <span class="cardText">1</span>
                                 <form class="hidden" action="updateCardName.php" method="post" >
                                     <input class="cardEdit" type="text" value="1">
-                                    <!-- <input type=\"hidden\" value=\"$id\" name=\"id\"> -->
                                 </form>
                             </span>
                             <div class="cardDropDown hidden">
@@ -95,14 +93,14 @@
                         </div>
                         
                     </div>
-                </div>
+                </div> -->
 
                 
                 <button id="buttonCreateList" class="list">
                     <div class="listName">+ Voeg een lijst toe</div>
                 </button>
 
-                <form id="buttonCreateListActive" class="list hidden" action="createList.php" method="post" target="redirect">
+                <form id="buttonCreateListActive" class="list hidden" action="phpFunctional/createList.php" method="post" target="redirect">
                     <input class="edit" type="text" value="" name="listname" placeholder="Geef deze lijst een naam..." required oninvalid="setCustomValidity(' ')">
                     <div>
                         <input type="submit" value="Lijst toevoegen">

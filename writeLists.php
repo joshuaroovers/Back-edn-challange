@@ -37,11 +37,35 @@ foreach ($allLists as $list) {
     <div class=\"list\">
         <div>
             <div>
-                <div class=\"listName\">$name</div>
-                <form class=\"hidden\" action=\"phpFunctional/updateListName.php\" method=\"post\">
-                    <input class=\"listNameEdit\" value=\"$name\" type=\"text\" name=\"name\" maxlength=\"88\">
-                    <input type=\"hidden\" value=\"$id\" name=\"id\">
-                </form>
+                <div class=\"listOptions\">
+                    <button class=\"listOptionsButton\"><i class=\"fas fa-ellipsis-v\"></i></button>
+                    <div class=\"listMenu hidden\">
+                        <form action=\"phpFunctional/updateListFilter.php\" method=\"POST\">
+                            <div>Filter by:</div>
+                            <select name=\"filter\">
+                                <option value=\"default\">default</option>
+                                <option value=\"duration\">duration</option>
+                            </select>
+                            <select name=\"direction\">
+                                <option value=\"ASC\">asending</option>
+                                <option value=\"DESC\">descending</option>
+                            </select>
+                            <input type=\"hidden\" name=\"id\" value=\"$id\">
+                            <input type=\"submit\" value=\"apply\">
+                        </form>
+                        <form action=\"phpFunctional/deleteList.php\" method=\"post\">
+                            <button class=\"deleteButton deleteList\"><i class=\"far fa-trash-alt\"></i></button>
+                            <input type=\"hidden\" name=\"id\" value=\"$id\">
+                        </form>
+                    </div>
+                </div>
+                <div>   
+                    <div class=\"listName\">$name</div>
+                    <form class=\"hidden\" action=\"phpFunctional/updateListName.php\" method=\"post\">
+                        <input class=\"listNameEdit\" value=\"$name\" type=\"text\" name=\"name\" maxlength=\"88\">
+                        <input type=\"hidden\" value=\"$id\" name=\"id\">
+                    </form>
+                </div>
             </div>
             <div></div>
         </div>

@@ -205,13 +205,18 @@ input
 {
     margin: 4px; 
     padding: 4px 12px;
+    background-color: inherit;
+    border: none;
+    font-size: inherit;
 }
 .listMenu
 {
+    z-index: 1;
     position: absolute; 
+    width: 120px;
     margin-left: 50px; 
     margin-top: -37.6px; 
-    border: var(--themeColor) 4px solid;
+    box-shadow: 0px 0px 5px 0.5px var(--themeColor);
     border-radius: 3px;
     background-color: gainsboro; 
     padding: 10px
@@ -227,9 +232,10 @@ select
     font-size: 16px;
 
 }
-select > option
-{   
-    
+.deleteList
+{
+    width: 100%;
+    margin-top: 5px
 }
 /*#endregion  */
 

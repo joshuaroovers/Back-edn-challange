@@ -10,6 +10,6 @@ $updateCard = $conn->prepare("UPDATE cards SET duration = '$duration' WHERE id =
 $updateCard->execute();
 
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 ?>

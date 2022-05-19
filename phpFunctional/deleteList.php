@@ -7,7 +7,7 @@ $deleteList = $conn->prepare("DELETE FROM lists WHERE id = $id; DELETE FROM card
 $deleteList->execute();
 
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 
 

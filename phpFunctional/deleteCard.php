@@ -7,7 +7,7 @@ $deleteCard = $conn->prepare("DELETE FROM cards WHERE id = $id");
 $deleteCard->execute();
 
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 
 

@@ -22,6 +22,6 @@ else
 $createNewCard = $conn->prepare("INSERT INTO cards (name, description, fromList, position) VALUES ('$newCardName','description...',$newCardFrom, $newPos)");
 $createNewCard->execute();
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 ?>

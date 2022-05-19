@@ -8,7 +8,7 @@ $updateListName = $conn->prepare("UPDATE lists SET name = '$name' WHERE id = $id
 $updateListName->execute();
 
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 ?>
 

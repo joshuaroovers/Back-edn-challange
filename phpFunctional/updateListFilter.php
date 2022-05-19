@@ -11,6 +11,6 @@ $updateCardFilter = $conn->prepare("UPDATE lists SET sortBy = '$filter', sortDir
 $updateCardFilter->execute();
 
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 ?>

@@ -21,6 +21,6 @@ else
 $createNewList = $conn->prepare("INSERT INTO lists (name , position) VALUES ('$newListName', $newPos)");
 $createNewList->execute();
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 ?>

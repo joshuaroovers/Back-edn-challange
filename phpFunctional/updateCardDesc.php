@@ -8,7 +8,7 @@ $updateCard = $conn->prepare("UPDATE cards SET description = '$cardDesc' WHERE i
 $updateCard->execute();
 
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 ?>
 

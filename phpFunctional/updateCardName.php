@@ -10,7 +10,7 @@ $updateCard = $conn->prepare("UPDATE cards SET name = '$name' WHERE id = $id");
 $updateCard->execute();
 
 
-header('Location:../Main.php');
+header('Location:../index.php');
 
 ?>
 
